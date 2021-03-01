@@ -22,11 +22,14 @@ t1 = BashOperator(
     dag=dag
 )
 
-t2 = BashOperator(
-    task_id="print_data",
-    bash_command="cat /var/data/year={{ execution_date.year }}/rocket={{ params.rocket }}/data.csv",
-    params={"rocket": "all"}, # falcon1/falcon9/falconheavy
-    dag=dag
-)
+rocket_types = {"all", "falcon1", "falcon9", "falconheavy"}
 
-t1 >> t2
+for rocket_type in rocket_types:
+    t2 = BashOperator(
+        task_id=f"print_data_{rocket_type}",
+        bash_command="cat /var/data/year={{ execution_date.year }}/rocket={{ params.rocket }}/data.csv",
+        params={"rocket": rocket_type}, # falcon1/falcon9/falconheavy
+        dag=dag
+    )
+
+    t1 >> t2
