@@ -20,6 +20,7 @@ dag = DAG(
     default_args=default_args,
     description='A simple tutorial DAG',
     schedule_interval=timedelta(seconds=60),
+    catchup=False,
 )
 
 git_pull = BashOperator(
