@@ -22,7 +22,7 @@ for rocket_type in rocket_types:
     t1 = BashOperator(
         task_id=f"get_data_{rocket_type}",
         bash_command="python3 /opt/airflow/dags/module-3-airflow/spacex/load_launches.py -y {{ execution_date.year }} -r {{ params.rocket }} -o /var/data",
-        params={"rocket": rocket_type},
+        params={"rocket": rocket_type if rocket_type != "all" else ""},
         dag=dag
     )
 
