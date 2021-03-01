@@ -21,7 +21,10 @@ rocket_types = {"all", "falcon1", "falcon9", "falconheavy"}
 for rocket_type in rocket_types:
     t1 = BashOperator(
         task_id=f"get_data_{rocket_type}",
-        bash_command="python3 /opt/airflow/dags/module-3-airflow/spacex/load_launches.py -y {{ execution_date.year }}{% if params.rocket != "all" %} -r {{ params.rocket }}{% endif %} -o /var/data",
+        bash_command=
+            "python3 /opt/airflow/dags/module-3-airflow/spacex/load_launches.py -y {{ execution_date.year }} -o /var/data"
+            if rocket_type == "all"
+            else "python3 /opt/airflow/dags/module-3-airflow/spacex/load_launches.py -y {{ execution_date.year }} -r {{ params.rocket }} -o /var/data",
         params={"rocket": rocket_type},
         dag=dag
     )
