@@ -24,9 +24,7 @@ def hive_task(owner, dag, task_id, query):
 
 default_args = {
     'owner': OWNER,
-    'depends_on_past': False,
-    'start_date': datetime(2012, 1, 1),
-    'retries': 0
+    'start_date': datetime(2013, 1, 1)
 }
 
 dag = DAG(
