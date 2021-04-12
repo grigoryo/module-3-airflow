@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from random import randint
 
 from airflow import DAG
-from airflow.operators.bash_operator import DataProcHiveOperator
+from airflow.contrib.operators.dataproc_operator import DataProcHiveOperator
 
 OWNER = 'gosipenkov'
 
