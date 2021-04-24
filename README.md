@@ -28,3 +28,8 @@ pip install pip==20.2.4
 pip install apache-airflow==1.10.14 --constraint "./airflow-constraints-1.10.14-3.8-fixed.txt"
 deactivate
 ```
+
+## VS Code
+
+Add desired options from `./.vscode/settings.sample.json`
+to your `./.vscode/settings.json`

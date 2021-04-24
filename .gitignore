@@ -139,3 +139,5 @@ cython_debug/
 
 ## MODULE-3-AIRFLOW
 *.session.sql
+/.vscode/*
+!/.vscode/*.sample.*
