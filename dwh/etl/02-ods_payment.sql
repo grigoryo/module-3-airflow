@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION gosipenkov.load_ods_payment (p_year INT) RETURNS VOID LANGUAGE plpgsql AS $$
 BEGIN
-    DELETE FROM gosipenkov.ods_payment WHERE YEAR(pay_date) = p_year;
+    DELETE FROM gosipenkov.ods_payment WHERE DATE_PART('YEAR', pay_date) = p_year;
 
     INSERT INTO gosipenkov.ods_payment
     SELECT
@@ -17,6 +17,6 @@ BEGIN
     FROM
         gosipenkov.stg_payment
     WHERE
-        YEAR(pay_date) = p_year;
+        DATE_PART('YEAR', pay_date) = p_year;
 END;
 $$;

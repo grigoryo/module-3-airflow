@@ -15,7 +15,7 @@ BEGIN
 
                 ROW_NUMBER() OVER (PARTITION BY pay_doc_pk ORDER BY effective_from ASC) AS rownum
             FROM gosipenkov.ods_v_payment
-            WHERE YEAR(pay_date) = p_year
+            WHERE DATE_PART('YEAR', pay_date) = p_year
         ) AS q
         WHERE rownum = 1
     )
