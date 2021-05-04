@@ -12,7 +12,7 @@ BEGIN
                 'gosipenkov.ods_payment' record_source,
 
                 -- payload
-                user_id
+                user_id,
 
                 ROW_NUMBER() OVER (PARTITION BY user_pk ORDER BY effective_from ASC) AS rownum
             FROM gosipenkov.ods_payment
