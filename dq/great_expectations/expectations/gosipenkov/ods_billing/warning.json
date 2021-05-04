@@ -3,27 +3,11 @@
   "expectation_suite_name": "gosipenkov.ods_billing.warning",
   "expectations": [
     {
-      "expectation_type": "expect_table_row_count_to_be_between",
-      "kwargs": {
-        "max_value": 1100,
-        "min_value": 900
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
       "expectation_type": "expect_table_column_count_to_equal",
       "kwargs": {
         "value": 7
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_table_columns_to_match_ordered_list",
@@ -38,22 +22,29 @@
           "load_date"
         ]
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "user_id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "user_id",
+        "min_value": 10000
+      },
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "tariff"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_distinct_values_to_be_in_set",
@@ -66,11 +57,7 @@
           "Mini"
         ]
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_kl_divergence_to_be_less_than",
@@ -92,165 +79,72 @@
         },
         "threshold": 0.6
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "billing_period"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
-      "expectation_type": "expect_column_min_to_be_between",
+      "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "billing_period",
-        "max_value": 201302,
-        "min_value": 201300
+        "max_value": 209999,
+        "min_value": 201000
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_max_to_be_between",
-      "kwargs": {
-        "column": "billing_period",
-        "max_value": 202104,
-        "min_value": 202102
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_mean_to_be_between",
-      "kwargs": {
-        "column": "billing_period",
-        "max_value": 201664.691,
-        "min_value": 201662.691
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_median_to_be_between",
-      "kwargs": {
-        "column": "billing_period",
-        "max_value": 201702.0,
-        "min_value": 201700.0
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_quantile_values_to_be_between",
-      "kwargs": {
-        "allow_relative_error": true,
-        "column": "billing_period",
-        "quantile_ranges": {
-          "quantiles": [
-            0.05,
-            0.25,
-            0.5,
-            0.75,
-            0.95
-          ],
-          "value_ranges": [
-            [
-              201304,
-              201306
-            ],
-            [
-              201500,
-              201502
-            ],
-            [
-              201700,
-              201702
-            ],
-            [
-              201901,
-              201903
-            ],
-            [
-              202008,
-              202010
-            ]
-          ]
-        }
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "service"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_value_lengths_to_be_between",
       "kwargs": {
         "column": "service",
-        "min_value": 1
+        "max_value": 14,
+        "min_value": 14
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "created_at"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "created_at",
-        "max_value": "2015-12-31 00:00:00",
-        "min_value": "2013-01-01 00:00:00",
+        "max_value": "2099-12-31 23:59:59",
+        "min_value": "2012-01-01 00:00:00",
         "parse_strings_as_datetimes": true
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "amount"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "amount",
+        "max_value": 99,
+        "min_value": 1
+      },
+      "meta": {}
     }
   ],
   "meta": {
