@@ -1,5 +1,14 @@
 # MODULE-3-AIRFLOW
 
+Airflow DAGs:
+
+-   Data Lake DAG - [data_lake_etl.py](data_lake_etl.py)
+-   DWH DAG - [dwh_etl.py](dwh_etl.py)
+
+Data Lake scripts: [data_lake/sql-scripts.md](data_lake/sql-scripts.md)
+
+DWH scripts directory: `./dwh`
+
 ## Development environment setup
 
 ### Windows
