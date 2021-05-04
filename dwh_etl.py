@@ -37,8 +37,21 @@ dag = DAG(
     schedule_interval='0 0 1 1 *'
 )
 
+
+load_ods_billing = pg_task(OWNER, dag, 'load_ods_billing', """
+    SELECT gosipenkov.load_ods_billing({{ execution_date.year }});
+""")
+
+load_ods_issue = pg_task(OWNER, dag, 'load_ods_issue', """
+    SELECT gosipenkov.load_ods_issue({{ execution_date.year }});
+""")
+
 load_ods_payment = pg_task(OWNER, dag, 'load_ods_payment', """
     SELECT gosipenkov.load_ods_payment({{ execution_date.year }});
+""")
+
+load_ods_traffic = pg_task(OWNER, dag, 'load_ods_traffic', """
+    SELECT gosipenkov.load_ods_traffic({{ execution_date.year }});
 """)
 
 ods_ok = tie_task(OWNER, dag, 'ods_ok')
@@ -74,7 +87,10 @@ load_sat_user_detail = pg_task(OWNER, dag, 'load_sat_user_detail', """
 sats_ok = tie_task(OWNER, dag, 'sats_ok')
 
 
+load_ods_billing >> ods_ok
+load_ods_issue >> ods_ok
 load_ods_payment >> ods_ok
+load_ods_traffic >> ods_ok
 
 ods_ok >> load_hub_pay_doc >> hubs_ok
 ods_ok >> load_hub_user >> hubs_ok
