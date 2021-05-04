@@ -11,7 +11,7 @@ SELECT
     amount,
 
     -- calculated
-    CURRENT_TIMESTAMP load_date,
+    load_date,
     'gosipenkov.stg_payment' record_source,
     pay_date AS effective_from,
 

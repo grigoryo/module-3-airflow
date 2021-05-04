@@ -11,7 +11,9 @@ BEGIN
         phone,
         billing_period,
         pay_date,
-        amount
+        amount,
+        -- calculated
+        CURRENT_TIMESTAMP load_date
     FROM
         gosipenkov.stg_payment
     WHERE
