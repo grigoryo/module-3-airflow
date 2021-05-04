@@ -6,10 +6,10 @@ BEGIN
             SELECT
                 -- calculated
                 payment_pk,
-                CURRENT_TIMESTAMP load_date,
-                'gosipenkov.ods_v_payment' record_source,
+                load_date,
+                record_source,
 
-                pay_date AS effective_from,
+                effective_from,
                 payment_billing_period_payload_hash AS payload_hash,
 
                 -- payload

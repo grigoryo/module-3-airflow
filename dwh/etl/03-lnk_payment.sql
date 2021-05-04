@@ -6,8 +6,8 @@ BEGIN
             SELECT
                 -- calculated
                 payment_pk,
-                CURRENT_TIMESTAMP load_date,
-                'gosipenkov.ods_v_payment' record_source,
+                load_date,
+                record_source,
 
                 -- payload
                 pay_doc_pk,

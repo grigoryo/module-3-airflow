@@ -11,6 +11,10 @@ SELECT
     amount,
 
     -- calculated
+    CURRENT_TIMESTAMP load_date,
+    'gosipenkov.stg_payment' record_source,
+    pay_date AS effective_from,
+
     CAST(MD5(NULLIF(CONCAT_WS('||',
         COALESCE(NULLIF(UPPER(TRIM(CAST(doc_type AS TEXT))), ''), '^^'),
         COALESCE(NULLIF(UPPER(TRIM(CAST(doc_num AS TEXT))), ''), '^^')
