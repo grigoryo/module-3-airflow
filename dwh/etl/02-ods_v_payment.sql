@@ -43,16 +43,16 @@ SELECT
 
     CAST(MD5(CONCAT_WS('||',
         -- hub PK fields
-        COALESCE(NULLIF(UPPER(TRIM(CAST(doc_type AS TEXT))), ''), '^^')
-        COALESCE(NULLIF(UPPER(TRIM(CAST(doc_num AS TEXT))), ''), '^^')
-        COALESCE(NULLIF(UPPER(TRIM(CAST(user_id AS TEXT))), ''), '^^')
+        COALESCE(NULLIF(UPPER(TRIM(CAST(doc_type AS TEXT))), ''), '^^'),
+        COALESCE(NULLIF(UPPER(TRIM(CAST(doc_num AS TEXT))), ''), '^^'),
+        COALESCE(NULLIF(UPPER(TRIM(CAST(user_id AS TEXT))), ''), '^^'),
         -- payload fields
         COALESCE(NULLIF(UPPER(TRIM(CAST(billing_period AS TEXT))), ''), '^^')
-    )) AS TEXT) AS payment_billing_period_hashdiff
+    )) AS TEXT) AS payment_billing_period_hashdiff,
 
     CAST(MD5(CONCAT_WS('||',
         -- hub PK fields
-        COALESCE(NULLIF(UPPER(TRIM(CAST(user_id AS TEXT))), ''), '^^')
+        COALESCE(NULLIF(UPPER(TRIM(CAST(user_id AS TEXT))), ''), '^^'),
         -- payload fields
         COALESCE(NULLIF(UPPER(TRIM(CAST(account AS TEXT))), ''), '^^'),
         COALESCE(NULLIF(UPPER(TRIM(CAST(phone AS TEXT))), ''), '^^')
