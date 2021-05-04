@@ -7,5 +7,5 @@ CREATE TABLE gosipenkov.ods_payment (
     billing_period INT,
     pay_date DATE,
     amount DECIMAL,
-    load_date DATE
+    load_date TIMESTAMP
 );
