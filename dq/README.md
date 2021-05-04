@@ -10,3 +10,24 @@ source .venv/Scripts/activate
 pip install -r requirements.txt
 deactivate
 ```
+
+## Use
+
+```shell
+cd dq
+source .venv/Scripts/activate
+
+great_expectations init
+great_expectations suite demo
+
+great_expectations suite list
+
+great_expectations suite edit gosipenkov.ods_billing.warning
+great_expectations suite edit gosipenkov.ods_issue.warning
+great_expectations suite edit gosipenkov.ods_payment.warning
+great_expectations suite edit gosipenkov.ods_traffic.warning
+
+great_expectations docs build --site-name local_site
+
+deactivate
+```

@@ -14,6 +14,50 @@
 -   DWH DAG: [dwh_etl.py](dwh_etl.py)
 -   DWH scripts directory: `./dwh`
 
+### Task 5
+
+**Проверка качества данных на основе фреймворка Great Expectations.**
+
+Описание проверок:
+
+-   Проверками были покрыты четыре таблицы слоя ODS: `ods_billing`, `ods_issue`,
+    `ods_payment`, `ods_traffic`.
+
+-   Сперва были сгенерированы демонстрационные проверки при помощи команд
+    `great_expectations init`, `great_expectations suite demo`.
+
+-   Далее для всех колонок были применены проверки на непустое значение
+    (например, для `user_id`), т.к. в нашем наборе данных пустые поля
+    отсутствуют.
+
+-   Были убраны проверки на основе агрегирующих функций, т.к.:
+
+    -   в ряде случаев они применялись к полям, не являющимся мерами, например,
+        `billing_period`,
+
+    -   в прочих случаях генератор случайных чисел, которым наполнялся наш
+        набор данных, давал слишком синтетические значения и такая проверка
+        выглядела синтетически.
+
+-   Были добавлены проверки на границы допустимых значений для объемов,
+    сумм (с целью отлавливать аномальные выбросы значений) и для
+    `billing_period` (как простой вариант проконтролировать хотя бы год).
+
+-   Были добавлены REGEX проверки для полей с лицевым счетом, IP-адресом,
+    номером телефона и т.п. Возможно, они будут слишком медленными в реальной
+    ситуации, но на небольшом наборе данных гарантируют полное отсутствие
+    ошибок в формате значений (но не защищают от смысловых ошибок, таких как
+    IP из недопустимого диапазона, неправильный префикс у номера телефона).
+
+Файлы **Data docs:**
+
+-   [ods_billing](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_billing/warning.html)
+-   [ods_issue](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_issue/warning.html)
+-   [ods_payment](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_payment/warning.html)
+-   [ods_traffic](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_traffic/warning.html)
+
+Техническая информация: [dq/README.md](dq/README.md)
+
 ## Development environment setup
 
 ### Windows
