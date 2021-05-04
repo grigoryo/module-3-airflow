@@ -5,24 +5,18 @@ BEGIN
         FROM (
             SELECT
                 -- calculated
-                CAST(MD5(NULLIF(CONCAT_WS('||',
-                    COALESCE(NULLIF(UPPER(TRIM(CAST(doc_type AS TEXT))), ''), '^^'),
-                    COALESCE(NULLIF(UPPER(TRIM(CAST(doc_num AS TEXT))), ''), '^^'),
-                    COALESCE(NULLIF(UPPER(TRIM(CAST(user_id AS TEXT))), ''), '^^')
-                ), '^^||^^||^^')) AS TEXT) AS payment_pk,
+                payment_pk,
                 CURRENT_TIMESTAMP load_date,
-                'gosipenkov.ods_payment' record_source,
+                'gosipenkov.ods_v_payment' record_source,
 
                 pay_date AS effective_from,
-                CAST(MD5(NULLIF(CONCAT_WS('||',
-                    COALESCE(NULLIF(UPPER(TRIM(CAST(billing_period AS TEXT))), ''), '^^')
-                ), '^^')) AS TEXT) AS payload_hash,
+                payment_billing_period_payload_hash AS payload_hash,
 
                 -- payload
                 billing_period,
 
                 ROW_NUMBER() OVER (PARTITION BY payment_pk ORDER BY effective_from DESC) AS rownum
-            FROM gosipenkov.ods_payment
+            FROM gosipenkov.ods_v_payment
             WHERE YEAR(pay_date) = p_year
         )
         WHERE rownum = 1
