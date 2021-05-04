@@ -16,7 +16,7 @@ BEGIN
                 ROW_NUMBER() OVER (PARTITION BY pay_doc_pk ORDER BY effective_from ASC) AS rownum
             FROM gosipenkov.ods_v_payment
             WHERE YEAR(pay_date) = p_year
-        )
+        ) AS q
         WHERE rownum = 1
     )
     INSERT INTO gosipenkov.lnk_payment
@@ -39,6 +39,6 @@ BEGIN
         payment_records AS rec
         LEFT JOIN gosipenkov.lnk_payment AS lnk
         ON rec.payment_pk = lnk.payment_pk
-    WHERE lnk.payment_pk IS NULL
+    WHERE lnk.payment_pk IS NULL;
 END;
 $$;

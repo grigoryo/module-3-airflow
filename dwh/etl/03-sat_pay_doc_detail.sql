@@ -19,7 +19,7 @@ BEGIN
                 ROW_NUMBER() OVER (PARTITION BY pay_doc_pk ORDER BY effective_from DESC) AS rownum
             FROM gosipenkov.ods_v_payment
             WHERE YEAR(pay_date) = p_year
-        )
+        ) AS q
         WHERE rownum = 1
     )
     INSERT INTO gosipenkov.sat_pay_doc_detail
@@ -48,6 +48,6 @@ BEGIN
         pay_doc_detail_records AS rec
         LEFT JOIN gosipenkov.sat_pay_doc_detail AS sat
         ON rec.hashdiff = sat.hashdiff
-    WHERE sat.hashdiff IS NULL
+    WHERE sat.hashdiff IS NULL;
 END;
 $$;

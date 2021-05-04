@@ -15,7 +15,7 @@ BEGIN
                 ROW_NUMBER() OVER (PARTITION BY user_pk ORDER BY effective_from ASC) AS rownum
             FROM gosipenkov.ods_v_payment
             WHERE YEAR(pay_date) = p_year
-        )
+        ) AS q
         WHERE rownum = 1
     )
     INSERT INTO gosipenkov.hub_user
@@ -36,6 +36,6 @@ BEGIN
         user_records AS rec
         LEFT JOIN gosipenkov.hub_user AS hub
         ON rec.user_pk = hub.user_pk
-    WHERE hub.user_pk IS NULL
+    WHERE hub.user_pk IS NULL;
 END;
 $$;
