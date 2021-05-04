@@ -13,7 +13,7 @@ BEGIN
         pay_date,
         amount,
         -- calculated
-        CURRENT_TIMESTAMP load_date
+        CURRENT_TIMESTAMP AS load_date
     FROM
         gosipenkov.stg_payment
     WHERE

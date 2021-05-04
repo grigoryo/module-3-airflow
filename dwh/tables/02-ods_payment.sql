@@ -6,5 +6,6 @@ CREATE TABLE gosipenkov.ods_payment (
     phone TEXT,
     billing_period INT,
     pay_date DATE,
-    amount DECIMAL
+    amount DECIMAL,
+    load_date DATE
 );
