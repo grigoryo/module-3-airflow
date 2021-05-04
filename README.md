@@ -18,10 +18,14 @@
 
 **Проверка качества данных на основе фреймворка Great Expectations.**
 
-Описание проверок:
+**Размещение:**
 
--   Проверками были покрыты четыре таблицы слоя ODS: `ods_billing`, `ods_issue`,
-    `ods_payment`, `ods_traffic`.
+-   папка `./dq`
+
+**Описание проверок:**
+
+-   Проверками были покрыты четыре таблицы слоя ODS: `ods_billing`,
+    `ods_issue`, `ods_payment`, `ods_traffic`.
 
 -   Сперва были сгенерированы демонстрационные проверки при помощи команд
     `great_expectations init`, `great_expectations suite demo`.
@@ -49,14 +53,12 @@
     ошибок в формате значений (но не защищают от смысловых ошибок, таких как
     IP из недопустимого диапазона, неправильный префикс у номера телефона).
 
-Файлы **Data docs:**
+**Файлы Data docs:**
 
 -   [ods_billing](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_billing/warning.html)
 -   [ods_issue](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_issue/warning.html)
 -   [ods_payment](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_payment/warning.html)
 -   [ods_traffic](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_traffic/warning.html)
-
-Техническая информация: [dq/README.md](dq/README.md)
 
 ## Development environment setup
 
