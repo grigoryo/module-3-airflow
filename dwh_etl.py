@@ -26,7 +26,7 @@ OWNER = 'gosipenkov'
 
 default_args = {
     'owner': OWNER,
-    'depends_on_past': False,
+    'depends_on_past': True,
     'start_date': datetime(2013, 1, 1)
 }
 
