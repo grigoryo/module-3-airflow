@@ -10,7 +10,7 @@ BEGIN
                 record_source,
 
                 effective_from,
-                payment_billing_period_payload_hash AS payload_hash,
+                payment_billing_period_hashdiff AS hashdiff,
 
                 -- payload
                 billing_period,
@@ -28,7 +28,7 @@ BEGIN
         record_source,
 
         effective_from,
-        payload_hash,
+        hashdiff,
 
         billing_period
     )
@@ -38,13 +38,13 @@ BEGIN
         rec.record_source,
 
         rec.effective_from,
-        rec.payload_hash,
+        rec.hashdiff,
 
         rec.billing_period
     FROM
         payment_billing_period_records AS rec
         LEFT JOIN gosipenkov.sat_payment_billing_period AS sat
-        ON rec.payload_hash = sat.payload_hash
-    WHERE sat.payload_hash IS NULL
+        ON rec.hashdiff = sat.hashdiff
+    WHERE sat.hashdiff IS NULL
 END;
 $$;

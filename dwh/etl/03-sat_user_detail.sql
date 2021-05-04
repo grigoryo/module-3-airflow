@@ -10,7 +10,7 @@ BEGIN
                 record_source,
 
                 effective_from,
-                user_detail_payload_hash AS payload_hash,
+                user_detail_hashdiff AS hashdiff,
 
                 -- payload
                 account,
@@ -29,7 +29,7 @@ BEGIN
         record_source,
 
         effective_from,
-        payload_hash,
+        hashdiff,
 
         account,
         phone
@@ -40,14 +40,14 @@ BEGIN
         rec.record_source,
 
         rec.effective_from,
-        rec.payload_hash,
+        rec.hashdiff,
 
         rec.account,
         rec.phone
     FROM
         user_detail_records AS rec
         LEFT JOIN gosipenkov.sat_user_detail AS sat
-        ON rec.payload_hash = sat.payload_hash
-    WHERE sat.payload_hash IS NULL
+        ON rec.hashdiff = sat.hashdiff
+    WHERE sat.hashdiff IS NULL
 END;
 $$;
