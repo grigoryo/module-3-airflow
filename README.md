@@ -1,13 +1,18 @@
 # MODULE-3-AIRFLOW
 
-Airflow DAGs:
+**Data Engineer 2020-2021** training course homeworks.
 
--   Data Lake DAG - [data_lake_etl.py](data_lake_etl.py)
--   DWH DAG - [dwh_etl.py](dwh_etl.py)
+## Contents
 
-Data Lake scripts: [data_lake/sql-scripts.md](data_lake/sql-scripts.md)
+### Task 3
 
-DWH scripts directory: `./dwh`
+-   Data Lake DAG: [data_lake_etl.py](data_lake_etl.py)
+-   Data Lake scripts: [data_lake/sql-scripts.md](data_lake/sql-scripts.md)
+
+### Task 4
+
+-   DWH DAG: [dwh_etl.py](dwh_etl.py)
+-   DWH scripts directory: `./dwh`
 
 ## Development environment setup
 
