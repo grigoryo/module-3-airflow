@@ -6,8 +6,7 @@ CREATE EXTERNAL TABLE gosipenkov.stg_payment (
     phone TEXT,
     billing_period INT,
     pay_date DATE,
-    amount DECIMAL,
-    year INT
+    amount DECIMAL
 )
 LOCATION ('pxf://rt-2021-03-25-16-47-29-sfunu-gosipenkov/data_lake/ods/payment/*/?PROFILE=gs:parquet')
 FORMAT 'CUSTOM' (FORMATTER='pxfwritable_import');
