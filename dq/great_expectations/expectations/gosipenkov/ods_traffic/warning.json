@@ -3,27 +3,11 @@
   "expectation_suite_name": "gosipenkov.ods_traffic.warning",
   "expectations": [
     {
-      "expectation_type": "expect_table_row_count_to_be_between",
-      "kwargs": {
-        "max_value": 1100,
-        "min_value": 900
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
       "expectation_type": "expect_table_column_count_to_equal",
       "kwargs": {
         "value": 7
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_table_columns_to_match_ordered_list",
@@ -38,209 +22,101 @@
           "load_date"
         ]
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "user_id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "user_id",
+        "min_value": 10000
+      },
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "device_id"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
-      "expectation_type": "expect_column_distinct_values_to_be_in_set",
+      "expectation_type": "expect_column_value_lengths_to_be_between",
       "kwargs": {
         "column": "device_id",
-        "value_set": [
-          "d001",
-          "d002",
-          "d003",
-          "d004",
-          "d005",
-          "d006",
-          "d007",
-          "d008",
-          "d009"
-        ]
+        "max_value": 50,
+        "min_value": 4
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_kl_divergence_to_be_less_than",
-      "kwargs": {
-        "column": "device_id",
-        "partition_object": {
-          "values": [
-            "d001",
-            "d002",
-            "d003",
-            "d004",
-            "d005",
-            "d006",
-            "d007",
-            "d008",
-            "d009"
-          ],
-          "weights": [
-            0.124,
-            0.103,
-            0.118,
-            0.118,
-            0.106,
-            0.109,
-            0.109,
-            0.107,
-            0.106
-          ]
-        },
-        "threshold": 0.6
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "unixtime"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
-      "expectation_type": "expect_column_min_to_be_between",
+      "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "unixtime",
-        "max_value": 1357150952,
-        "min_value": 1357150950
+        "max_value": 4102408799,
+        "min_value": 1262268000
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_max_to_be_between",
-      "kwargs": {
-        "column": "unixtime",
-        "max_value": 1388514152,
-        "min_value": 1388514150
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_mean_to_be_between",
-      "kwargs": {
-        "column": "unixtime",
-        "max_value": 1373355704.0,
-        "min_value": 1373355702.0
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_median_to_be_between",
-      "kwargs": {
-        "column": "unixtime",
-        "max_value": 1373653352.0,
-        "min_value": 1373653350.0
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
-      "expectation_type": "expect_column_quantile_values_to_be_between",
-      "kwargs": {
-        "allow_relative_error": true,
-        "column": "unixtime",
-        "quantile_ranges": {
-          "quantiles": [
-            0.05,
-            0.25,
-            0.5,
-            0.75,
-            0.95
-          ],
-          "value_ranges": [
-            [
-              1359224550,
-              1359224552
-            ],
-            [
-              1365531750,
-              1365531752
-            ],
-            [
-              1373653350,
-              1373653352
-            ],
-            [
-              1380824550,
-              1380824552
-            ],
-            [
-              1387304550,
-              1387304552
-            ]
-          ]
-        }
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "device_ip_addr"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
-      "expectation_type": "expect_column_value_lengths_to_be_between",
+      "expectation_type": "expect_column_values_to_match_regex",
       "kwargs": {
         "column": "device_ip_addr",
+        "regex": "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "bytes_sent"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "bytes_sent",
+        "max_value": 99999,
         "min_value": 1
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "bytes_received"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "bytes_received",
+        "max_value": 99999,
+        "min_value": 1
+      },
+      "meta": {}
     }
   ],
   "meta": {
