@@ -1,0 +1,324 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "gosipenkov.ods_payment.warning",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "max_value": 1100,
+        "min_value": 900
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_table_column_count_to_equal",
+      "kwargs": {
+        "value": 9
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "user_id",
+          "doc_type",
+          "doc_num",
+          "account",
+          "phone",
+          "billing_period",
+          "pay_date",
+          "amount",
+          "load_date"
+        ]
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "doc_type"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_distinct_values_to_be_in_set",
+      "kwargs": {
+        "column": "doc_type",
+        "value_set": [
+          "MASTER",
+          "MIR",
+          "VISA"
+        ]
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_kl_divergence_to_be_less_than",
+      "kwargs": {
+        "column": "doc_type",
+        "partition_object": {
+          "values": [
+            "MASTER",
+            "MIR",
+            "VISA"
+          ],
+          "weights": [
+            0.296,
+            0.356,
+            0.348
+          ]
+        },
+        "threshold": 0.6
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "doc_num"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "doc_num",
+        "max_value": 7,
+        "min_value": 5
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "doc_num",
+        "max_value": 49971,
+        "min_value": 49969
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "doc_num",
+        "max_value": 25185.217,
+        "min_value": 25183.217
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "doc_num",
+        "max_value": 24803.5,
+        "min_value": 24801.5
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": true,
+        "column": "doc_num",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              2522,
+              2524
+            ],
+            [
+              12180,
+              12182
+            ],
+            [
+              24758,
+              24760
+            ],
+            [
+              37871,
+              37873
+            ],
+            [
+              48109,
+              48111
+            ]
+          ]
+        }
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "account"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_value_lengths_to_be_between",
+      "kwargs": {
+        "column": "account",
+        "min_value": 1
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "pay_date"
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "pay_date",
+        "max_value": "2015-12-31 00:00:00",
+        "min_value": "2012-01-02 00:00:00",
+        "parse_strings_as_datetimes": true
+      },
+      "meta": {
+        "BasicSuiteBuilderProfiler": {
+          "confidence": "very low"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "BasicSuiteBuilderProfiler": {
+      "batch_kwargs": {
+        "data_asset_name": "gosipenkov.ods_payment",
+        "datasource": "rtk_de",
+        "limit": 1000,
+        "schema": "gosipenkov",
+        "table": "ods_payment"
+      },
+      "created_at": 1620137112.1730793,
+      "created_by": "BasicSuiteBuilderProfiler"
+    },
+    "citations": [
+      {
+        "batch_definition": null,
+        "batch_kwargs": {
+          "data_asset_name": "gosipenkov.ods_payment",
+          "datasource": "rtk_de",
+          "limit": 1000,
+          "schema": "gosipenkov",
+          "table": "ods_payment"
+        },
+        "batch_markers": {
+          "ge_load_time": "20210504T140451.942842Z"
+        },
+        "batch_parameters": null,
+        "batch_request": null,
+        "batch_spec": null,
+        "citation_date": "2021-05-04T14:05:17.908837Z",
+        "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
+      }
+    ],
+    "columns": {
+      "account": {
+        "description": ""
+      },
+      "amount": {
+        "description": ""
+      },
+      "billing_period": {
+        "description": ""
+      },
+      "doc_num": {
+        "description": ""
+      },
+      "doc_type": {
+        "description": ""
+      },
+      "load_date": {
+        "description": ""
+      },
+      "pay_date": {
+        "description": ""
+      },
+      "phone": {
+        "description": ""
+      },
+      "user_id": {
+        "description": ""
+      }
+    },
+    "great_expectations_version": "0.13.19",
+    "notes": {
+      "content": [
+        "#### This is an _example_ suite\n\n- This suite was made by quickly glancing at 1000 rows of your data.\n- This is **not a production suite**. It is meant to show examples of expectations.\n- Because this suite was auto-generated using a very basic profiler that does not know your data like you do, many of the expectations may not be meaningful.\n"
+      ],
+      "format": "markdown"
+    }
+  }
+}
