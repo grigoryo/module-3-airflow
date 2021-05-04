@@ -1,4 +1,4 @@
-CREATE TABLE gosipenkov.ods_trafic (
+CREATE TABLE gosipenkov.ods_traffic (
     user_id INT,
     unixtime INT,
     device_id TEXT,
