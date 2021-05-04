@@ -3,27 +3,11 @@
   "expectation_suite_name": "gosipenkov.ods_issue.warning",
   "expectations": [
     {
-      "expectation_type": "expect_table_row_count_to_be_between",
-      "kwargs": {
-        "max_value": 1100,
-        "min_value": 900
-      },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
-    },
-    {
       "expectation_type": "expect_table_column_count_to_equal",
       "kwargs": {
         "value": 7
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_table_columns_to_match_ordered_list",
@@ -38,22 +22,29 @@
           "load_date"
         ]
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "user_id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "user_id",
+        "min_value": 10000
+      },
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "service"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_distinct_values_to_be_in_set",
@@ -65,11 +56,7 @@
           "Setup Environment"
         ]
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_kl_divergence_to_be_less_than",
@@ -89,59 +76,73 @@
         },
         "threshold": 0.6
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "title"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_value_lengths_to_be_between",
       "kwargs": {
         "column": "title",
-        "min_value": 1
+        "max_value": 14,
+        "min_value": 14
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "description"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_value_lengths_to_be_between",
+      "kwargs": {
+        "column": "description",
+        "max_value": 14,
+        "min_value": 14
+      },
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "start_date"
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "start_date",
-        "max_value": "2022-03-03 00:00:00",
-        "min_value": "2012-01-08 00:00:00",
+        "max_value": "2099-12-31 23:59:59",
+        "min_value": "2010-01-01 00:00:00",
         "parse_strings_as_datetimes": true
       },
-      "meta": {
-        "BasicSuiteBuilderProfiler": {
-          "confidence": "very low"
-        }
-      }
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "end_date"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "end_date",
+        "max_value": "2099-12-31 23:59:59",
+        "min_value": "2010-01-01 00:00:00",
+        "parse_strings_as_datetimes": true
+      },
+      "meta": {}
     }
   ],
   "meta": {
