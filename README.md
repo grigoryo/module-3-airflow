@@ -22,6 +22,10 @@
 
 -   папка `./dq`
 
+**Data docs:**
+
+-   [dq/data_docs.zip](dq/data_docs.zip)
+
 **Описание проверок:**
 
 -   Проверками были покрыты четыре таблицы слоя ODS: `ods_billing`,
@@ -52,13 +56,6 @@
     ситуации, но на небольшом наборе данных гарантируют полное отсутствие
     ошибок в формате значений (но не защищают от смысловых ошибок, таких как
     IP из недопустимого диапазона, неправильный префикс у номера телефона).
-
-**Файлы Data docs:**
-
--   [ods_billing](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_billing/warning.html)
--   [ods_issue](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_issue/warning.html)
--   [ods_payment](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_payment/warning.html)
--   [ods_traffic](dq/great_expectations/uncommitted/data_docs/local_site/expectations/gosipenkov/ods_traffic/warning.html)
 
 ## Development environment setup
 
