@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION gosipenkov.load_rep_payment_tmp (p_year INT) RETURNS VOID LANGUAGE plpgsql AS $$
+CREATE OR REPLACE FUNCTION gosipenkov.load_rep_payment_tmp () RETURNS VOID LANGUAGE plpgsql AS $$
 BEGIN
     -- Факты: платежи.
     -- Текущие данные из сателлитов (Raw Data Mart).
