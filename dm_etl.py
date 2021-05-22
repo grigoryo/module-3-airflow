@@ -31,7 +31,7 @@ default_args = {
 
 
 dag = DAG(
-    '_'.join((OWNER, 'dwh_etl')),
+    '_'.join((OWNER, 'dm_etl')),
     default_args=default_args,
     schedule_interval='None'
 )
