@@ -8,8 +8,8 @@ BEGIN
         user_reg_year_name
     )
     SELECT DISTINCT
-        DENSE_RANK() OVER (ORDER BY user_reg_year_name ASC),
-        user_reg_year_name
+        DENSE_RANK() OVER (ORDER BY user_registered_at_year ASC),
+        user_registered_at_year
     FROM gosipenkov.rep_payment_tmp
     ORDER BY 1 ASC;
 END;
