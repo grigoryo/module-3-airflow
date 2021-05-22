@@ -26,14 +26,16 @@ OWNER = 'gosipenkov'
 
 default_args = {
     'owner': OWNER,
-    'depends_on_past': True
+    'depends_on_past': True,
+    'start_date': datetime(2021, 5, 22)
 }
 
 
 dag = DAG(
     '_'.join((OWNER, 'dm_etl')),
     default_args=default_args,
-    schedule_interval='None'
+    schedule_interval=None,
+    catchup=False
 )
 
 
