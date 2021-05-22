@@ -28,11 +28,11 @@ BEGIN
         SELECT
             mu.legal_type AS user_legal_type,
             mu.district AS user_district,
-            CAST(EXTRACT(YEAR FROM mu.registered_at) AS INT) AS user_registered_at_year,
+            CAST(EXTRACT(YEAR FROM mu.registered_at) AS TEXT) AS user_registered_at_year,
             mu.billing_mode AS user_billing_mode,
             mu.is_vip AS user_is_vip,
 
-            CAST(SUBSTRING(CAST(spbp.billing_period AS TEXT), 1, 4) AS INT) AS payment_billing_period_year,
+            SUBSTRING(CAST(spbp.billing_period AS TEXT), 1, 4) AS payment_billing_period_year,
 
             spdd.amount AS pay_doc_amount
         FROM
