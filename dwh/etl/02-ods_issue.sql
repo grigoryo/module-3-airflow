@@ -3,10 +3,19 @@ BEGIN
     DELETE FROM gosipenkov.ods_issue WHERE DATE_PART('YEAR', end_date) = p_year;
 
     INSERT INTO gosipenkov.ods_issue
+    (
+        user_id,
+        start_time,
+        end_time,
+        title,
+        description,
+        service,
+        load_date
+    )
     SELECT
         user_id,
-        start_date,
-        end_date,
+        CAST(start_time AS TIMESTAMP) AS start_time,
+        CAST(end_time AS TIMESTAMP) AS end_time,
         title,
         description,
         service,
