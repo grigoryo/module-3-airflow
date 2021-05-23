@@ -57,6 +57,11 @@
     ошибок в формате значений (но не защищают от смысловых ошибок, таких как
     IP из недопустимого диапазона, неправильный префикс у номера телефона).
 
+### Task 6
+
+-   DM DAG: [dm_etl.py](dm_etl.py)
+-   DM scripts directory: `./dm`
+
 ## Development environment setup
 
 ### Windows
