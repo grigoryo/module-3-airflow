@@ -1,11 +1,11 @@
 {
   "data_asset_type": "Dataset",
-  "expectation_suite_name": "gosipenkov.ods_issue.warning",
+  "expectation_suite_name": "gosipenkov.stg_issue.warning",
   "expectations": [
     {
       "expectation_type": "expect_table_column_count_to_equal",
       "kwargs": {
-        "value": 7
+        "value": 6
       },
       "meta": {}
     },
@@ -18,86 +18,32 @@
           "end_time",
           "title",
           "description",
-          "service",
-          "load_date"
+          "service"
         ]
       },
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "user_id"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
+      "expectation_type": "expect_column_values_to_match_regex",
       "kwargs": {
         "column": "user_id",
-        "min_value": 1
+        "regex": "^[0-9]+$"
       },
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "start_time"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
+      "expectation_type": "expect_column_values_to_match_regex",
       "kwargs": {
         "column": "start_time",
-        "max_value": "2099-12-31 00:00:00",
-        "min_value": "2010-01-01 00:00:00",
-        "parse_strings_as_datetimes": true
+        "regex": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}$"
       },
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "end_time"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
+      "expectation_type": "expect_column_values_to_match_regex",
       "kwargs": {
         "column": "end_time",
-        "max_value": "2099-12-31 00:00:00",
-        "min_value": "2010-01-01 00:00:00",
-        "parse_strings_as_datetimes": true
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "title"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "description"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "service"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "load_date"
+        "regex": "^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}$"
       },
       "meta": {}
     }
@@ -105,32 +51,32 @@
   "meta": {
     "BasicSuiteBuilderProfiler": {
       "batch_kwargs": {
-        "data_asset_name": "gosipenkov.ods_issue",
+        "data_asset_name": "gosipenkov.stg_issue",
         "datasource": "rtk_de",
         "limit": 1000,
         "schema": "gosipenkov",
-        "table": "ods_issue"
+        "table": "stg_issue"
       },
-      "created_at": 1621863767.724541,
+      "created_at": 1621868385.3708544,
       "created_by": "BasicSuiteBuilderProfiler"
     },
     "citations": [
       {
         "batch_definition": null,
         "batch_kwargs": {
-          "data_asset_name": "gosipenkov.ods_issue",
+          "data_asset_name": "gosipenkov.stg_issue",
           "datasource": "rtk_de",
           "limit": 1000,
           "schema": "gosipenkov",
-          "table": "ods_issue"
+          "table": "stg_issue"
         },
         "batch_markers": {
-          "ge_load_time": "20210524T134230.831732Z"
+          "ge_load_time": "20210524T145921.858934Z"
         },
         "batch_parameters": null,
         "batch_request": null,
         "batch_spec": null,
-        "citation_date": "2021-05-24T13:42:52.863275Z",
+        "citation_date": "2021-05-24T14:59:48.987451Z",
         "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
       }
     ],
@@ -139,9 +85,6 @@
         "description": ""
       },
       "end_time": {
-        "description": ""
-      },
-      "load_date": {
         "description": ""
       },
       "service": {

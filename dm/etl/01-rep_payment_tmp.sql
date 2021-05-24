@@ -26,11 +26,11 @@ BEGIN
         SUM(r.pay_doc_amount) AS sum_pay_doc_amount
     FROM (
         SELECT
-            mu.legal_type AS user_legal_type,
-            mu.district AS user_district,
-            CAST(EXTRACT(YEAR FROM mu.registered_at) AS TEXT) AS user_registered_at_year,
-            mu.billing_mode AS user_billing_mode,
-            mu.is_vip AS user_is_vip,
+            sum0.legal_type AS user_legal_type,
+            sum0.district AS user_district,
+            CAST(EXTRACT(YEAR FROM sum0.reg_date) AS TEXT) AS user_registered_at_year,
+            sum0.billing_mode AS user_billing_mode,
+            sum0.is_vip AS user_is_vip,
 
             SUBSTRING(CAST(spbp.billing_period AS TEXT), 1, 4) AS payment_billing_period_year,
 
@@ -44,7 +44,14 @@ BEGIN
                 ) spbp
                 ON lp.payment_pk = spbp.payment_pk AND spbp.rownum = 1
             )
-            INNER JOIN gosipenkov.hub_user hu
+            INNER JOIN (
+                gosipenkov.hub_user hu
+                INNER JOIN (
+                    SELECT *, ROW_NUMBER() OVER (PARTITION BY user_pk ORDER BY effective_from DESC) AS rownum
+                    FROM gosipenkov.sat_user_mdm
+                ) sum0
+                ON hu.user_pk = sum0.user_pk AND sum0.rownum = 1
+            )
             ON lp.user_pk = hu.user_pk
 
             INNER JOIN (
@@ -56,9 +63,6 @@ BEGIN
                 ON hpd.pay_doc_pk = spdd.pay_doc_pk AND spdd.rownum = 1
             )
             ON lp.pay_doc_pk = hpd.pay_doc_pk
-
-            INNER JOIN mdm.user AS mu
-            ON hu.user_id = mu.id
     ) AS r
     GROUP BY
         r.user_legal_type,

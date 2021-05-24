@@ -1,0 +1,87 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "gosipenkov.stg_user.warning",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_column_count_to_equal",
+      "kwargs": {
+        "value": 6
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "id",
+          "legal_type",
+          "district",
+          "registered_at",
+          "billing_mode",
+          "is_vip"
+        ]
+      },
+      "meta": {}
+    }
+  ],
+  "meta": {
+    "BasicSuiteBuilderProfiler": {
+      "batch_kwargs": {
+        "data_asset_name": "gosipenkov.stg_user",
+        "datasource": "rtk_de",
+        "limit": 1000,
+        "schema": "gosipenkov",
+        "table": "stg_user"
+      },
+      "created_at": 1621863573.2339745,
+      "created_by": "BasicSuiteBuilderProfiler"
+    },
+    "citations": [
+      {
+        "batch_definition": null,
+        "batch_kwargs": {
+          "data_asset_name": "gosipenkov.stg_user",
+          "datasource": "rtk_de",
+          "limit": 1000,
+          "schema": "gosipenkov",
+          "table": "stg_user"
+        },
+        "batch_markers": {
+          "ge_load_time": "20210524T133917.699115Z"
+        },
+        "batch_parameters": null,
+        "batch_request": null,
+        "batch_spec": null,
+        "citation_date": "2021-05-24T13:39:38.871001Z",
+        "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
+      }
+    ],
+    "columns": {
+      "billing_mode": {
+        "description": ""
+      },
+      "district": {
+        "description": ""
+      },
+      "id": {
+        "description": ""
+      },
+      "is_vip": {
+        "description": ""
+      },
+      "legal_type": {
+        "description": ""
+      },
+      "registered_at": {
+        "description": ""
+      }
+    },
+    "great_expectations_version": "0.13.19",
+    "notes": {
+      "content": [
+        "#### This is an _example_ suite\n\n- This suite was made by quickly glancing at 1000 rows of your data.\n- This is **not a production suite**. It is meant to show examples of expectations.\n- Because this suite was auto-generated using a very basic profiler that does not know your data like you do, many of the expectations may not be meaningful.\n"
+      ],
+      "format": "markdown"
+    }
+  }
+}
