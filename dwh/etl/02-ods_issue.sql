@@ -13,7 +13,7 @@ BEGIN
         load_date
     )
     SELECT
-        user_id,
+        CAST(user_id AS INT) AS user_id,
         CAST(start_time AS TIMESTAMP) AS start_time,
         CAST(end_time AS TIMESTAMP) AS end_time,
         title,
