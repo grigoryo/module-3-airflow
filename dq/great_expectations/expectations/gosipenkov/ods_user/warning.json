@@ -1,6 +1,6 @@
 {
   "data_asset_type": "Dataset",
-  "expectation_suite_name": "gosipenkov.ods_issue.warning",
+  "expectation_suite_name": "gosipenkov.ods_user.warning",
   "expectations": [
     {
       "expectation_type": "expect_table_column_count_to_equal",
@@ -14,11 +14,11 @@
       "kwargs": {
         "column_list": [
           "user_id",
-          "start_time",
-          "end_time",
-          "title",
-          "description",
-          "service",
+          "legal_type",
+          "district",
+          "reg_date",
+          "billing_mode",
+          "is_vip",
           "load_date"
         ]
       },
@@ -34,35 +34,35 @@
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "start_time"
+        "column": "legal_type"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "end_time"
+        "column": "district"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "title"
+        "column": "reg_date"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "description"
+        "column": "billing_mode"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "service"
+        "column": "is_vip"
       },
       "meta": {}
     },
@@ -82,9 +82,27 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_unique_value_count_to_be_between",
+      "kwargs": {
+        "column": "legal_type",
+        "max_value": 2,
+        "min_value": 2
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_unique_value_count_to_be_between",
+      "kwargs": {
+        "column": "district",
+        "max_value": 8,
+        "min_value": 8
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
-        "column": "start_time",
+        "column": "reg_date",
         "max_value": "2099-12-31 00:00:00",
         "min_value": "2010-01-01 00:00:00",
         "parse_strings_as_datetimes": true
@@ -92,12 +110,11 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_be_between",
+      "expectation_type": "expect_column_unique_value_count_to_be_between",
       "kwargs": {
-        "column": "end_time",
-        "max_value": "2099-12-31 00:00:00",
-        "min_value": "2010-01-01 00:00:00",
-        "parse_strings_as_datetimes": true
+        "column": "billing_mode",
+        "max_value": 2,
+        "min_value": 2
       },
       "meta": {}
     }
@@ -105,52 +122,52 @@
   "meta": {
     "BasicSuiteBuilderProfiler": {
       "batch_kwargs": {
-        "data_asset_name": "gosipenkov.ods_issue",
+        "data_asset_name": "gosipenkov.ods_user",
         "datasource": "rtk_de",
         "limit": 1000,
         "schema": "gosipenkov",
-        "table": "ods_issue"
+        "table": "ods_user"
       },
-      "created_at": 1621863767.724541,
+      "created_at": 1621863950.2135174,
       "created_by": "BasicSuiteBuilderProfiler"
     },
     "citations": [
       {
         "batch_definition": null,
         "batch_kwargs": {
-          "data_asset_name": "gosipenkov.ods_issue",
+          "data_asset_name": "gosipenkov.ods_user",
           "datasource": "rtk_de",
           "limit": 1000,
           "schema": "gosipenkov",
-          "table": "ods_issue"
+          "table": "ods_user"
         },
         "batch_markers": {
-          "ge_load_time": "20210524T134230.831732Z"
+          "ge_load_time": "20210524T134529.452346Z"
         },
         "batch_parameters": null,
         "batch_request": null,
         "batch_spec": null,
-        "citation_date": "2021-05-24T13:42:52.863275Z",
+        "citation_date": "2021-05-24T13:45:55.964739Z",
         "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
       }
     ],
     "columns": {
-      "description": {
+      "billing_mode": {
         "description": ""
       },
-      "end_time": {
+      "district": {
+        "description": ""
+      },
+      "is_vip": {
+        "description": ""
+      },
+      "legal_type": {
         "description": ""
       },
       "load_date": {
         "description": ""
       },
-      "service": {
-        "description": ""
-      },
-      "start_time": {
-        "description": ""
-      },
-      "title": {
+      "reg_date": {
         "description": ""
       },
       "user_id": {

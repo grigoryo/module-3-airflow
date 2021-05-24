@@ -32,10 +32,16 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_be_between",
+      "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "user_id",
-        "min_value": 10000
+        "column": "billing_period"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "service"
       },
       "meta": {}
     },
@@ -47,44 +53,31 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_distinct_values_to_be_in_set",
+      "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "tariff",
-        "value_set": [
-          "Gigabyte",
-          "Maxi",
-          "Megabyte",
-          "Mini"
-        ]
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_kl_divergence_to_be_less_than",
-      "kwargs": {
-        "column": "tariff",
-        "partition_object": {
-          "values": [
-            "Gigabyte",
-            "Maxi",
-            "Megabyte",
-            "Mini"
-          ],
-          "weights": [
-            0.264,
-            0.249,
-            0.243,
-            0.244
-          ]
-        },
-        "threshold": 0.6
+        "column": "amount"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "billing_period"
+        "column": "created_at"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "load_date"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "user_id",
+        "min_value": 1
       },
       "meta": {}
     },
@@ -98,25 +91,11 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_not_be_null",
+      "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
-        "column": "service"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_value_lengths_to_be_between",
-      "kwargs": {
-        "column": "service",
-        "max_value": 14,
-        "min_value": 14
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "created_at"
+        "column": "amount",
+        "max_value": 99999.99,
+        "min_value": 0.01
       },
       "meta": {}
     },
@@ -124,25 +103,9 @@
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "created_at",
-        "max_value": "2099-12-31 23:59:59",
-        "min_value": "2012-01-01 00:00:00",
+        "max_value": "2099-12-31 00:00:00",
+        "min_value": "2010-01-01 00:00:00",
         "parse_strings_as_datetimes": true
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "amount"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "amount",
-        "max_value": 99,
-        "min_value": 1
       },
       "meta": {}
     }
@@ -156,7 +119,7 @@
         "schema": "gosipenkov",
         "table": "ods_billing"
       },
-      "created_at": 1620144501.2498734,
+      "created_at": 1621863705.148384,
       "created_by": "BasicSuiteBuilderProfiler"
     },
     "citations": [
@@ -170,12 +133,12 @@
           "table": "ods_billing"
         },
         "batch_markers": {
-          "ge_load_time": "20210504T160802.655811Z"
+          "ge_load_time": "20210524T134122.469552Z"
         },
         "batch_parameters": null,
         "batch_request": null,
         "batch_spec": null,
-        "citation_date": "2021-05-04T16:08:27.265691Z",
+        "citation_date": "2021-05-24T13:41:50.242105Z",
         "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
       }
     ],
