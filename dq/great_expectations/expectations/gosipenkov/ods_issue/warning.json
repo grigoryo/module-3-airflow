@@ -32,6 +32,14 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "user_id",
+        "min_value": 1
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "start_time"
@@ -39,9 +47,29 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "start_time",
+        "max_value": "2099-12-31 00:00:00",
+        "min_value": "2010-01-01 00:00:00",
+        "parse_strings_as_datetimes": true
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "end_time"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "end_time",
+        "max_value": "2099-12-31 00:00:00",
+        "min_value": "2010-01-01 00:00:00",
+        "parse_strings_as_datetimes": true
       },
       "meta": {}
     },
@@ -70,34 +98,6 @@
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "load_date"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "user_id",
-        "min_value": 1
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "start_time",
-        "max_value": "2099-12-31 00:00:00",
-        "min_value": "2010-01-01 00:00:00",
-        "parse_strings_as_datetimes": true
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "end_time",
-        "max_value": "2099-12-31 00:00:00",
-        "min_value": "2010-01-01 00:00:00",
-        "parse_strings_as_datetimes": true
       },
       "meta": {}
     }

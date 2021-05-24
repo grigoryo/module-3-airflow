@@ -32,52 +32,17 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "unixtime"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "device_id"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "device_ip_addr"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "bytes_sent"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "bytes_received"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "load_date"
-      },
-      "meta": {}
-    },
-    {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "user_id",
         "min_value": 1
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "unixtime"
       },
       "meta": {}
     },
@@ -90,10 +55,24 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "device_id"
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_values_to_match_regex",
       "kwargs": {
         "column": "device_id",
         "regex": "^d[0-9]{9}$"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "device_ip_addr"
       },
       "meta": {}
     },
@@ -106,6 +85,13 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "bytes_sent"
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "bytes_sent",
@@ -114,10 +100,24 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "bytes_received"
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "bytes_received",
         "min_value": 0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "load_date"
       },
       "meta": {}
     }

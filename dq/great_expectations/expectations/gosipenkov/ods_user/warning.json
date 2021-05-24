@@ -32,52 +32,17 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "legal_type"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "district"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "reg_date"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "billing_mode"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "is_vip"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "load_date"
-      },
-      "meta": {}
-    },
-    {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "user_id",
         "min_value": 1
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "legal_type"
       },
       "meta": {}
     },
@@ -91,11 +56,25 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "district"
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_unique_value_count_to_be_between",
       "kwargs": {
         "column": "district",
         "max_value": 8,
         "min_value": 8
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "reg_date"
       },
       "meta": {}
     },
@@ -110,11 +89,32 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "billing_mode"
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_unique_value_count_to_be_between",
       "kwargs": {
         "column": "billing_mode",
         "max_value": 2,
         "min_value": 2
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "is_vip"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "load_date"
       },
       "meta": {}
     }

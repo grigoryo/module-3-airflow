@@ -32,9 +32,26 @@
       "meta": {}
     },
     {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "user_id",
+        "min_value": 1
+      },
+      "meta": {}
+    },
+    {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
         "column": "billing_period"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "billing_period",
+        "max_value": 209999,
+        "min_value": 201000
       },
       "meta": {}
     },
@@ -60,42 +77,18 @@
       "meta": {}
     },
     {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "created_at"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_not_be_null",
-      "kwargs": {
-        "column": "load_date"
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "user_id",
-        "min_value": 1
-      },
-      "meta": {}
-    },
-    {
-      "expectation_type": "expect_column_values_to_be_between",
-      "kwargs": {
-        "column": "billing_period",
-        "max_value": 209999,
-        "min_value": 201000
-      },
-      "meta": {}
-    },
-    {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
         "column": "amount",
         "max_value": 99999.99,
         "min_value": 0.01
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "created_at"
       },
       "meta": {}
     },
@@ -106,6 +99,13 @@
         "max_value": "2099-12-31 00:00:00",
         "min_value": "2010-01-01 00:00:00",
         "parse_strings_as_datetimes": true
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "load_date"
       },
       "meta": {}
     }
