@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION gosipenkov.load_ods_user () RETURNS VOID LANGUAGE plpgsql AS $$
+CREATE OR REPLACE FUNCTION gosipenkov.mdm_load_ods_user () RETURNS VOID LANGUAGE plpgsql AS $$
 BEGIN
     INSERT INTO gosipenkov.ods_user
     (

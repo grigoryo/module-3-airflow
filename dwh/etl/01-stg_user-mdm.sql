@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION gosipenkov.load_stg_user () RETURNS VOID LANGUAGE plpgsql AS $$
+CREATE OR REPLACE FUNCTION gosipenkov.mdm_load_stg_user () RETURNS VOID LANGUAGE plpgsql AS $$
 BEGIN
     TRUNCATE TABLE gosipenkov.stg_user;
 

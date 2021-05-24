@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION gosipenkov.load_sat_user_mdm () RETURNS VOID LANGUAGE plpgsql AS $$
+CREATE OR REPLACE FUNCTION gosipenkov.mdm_load_sat_user_mdm () RETURNS VOID LANGUAGE plpgsql AS $$
 BEGIN
     WITH user_mdm_records AS (
         SELECT *
