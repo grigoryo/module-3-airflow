@@ -20,8 +20,6 @@ BEGIN
         -- calculated
         CURRENT_TIMESTAMP AS load_date
     FROM
-        gosipenkov.stg_user
-    WHERE
-        DATE_PART('YEAR', created_at) = p_year;
+        gosipenkov.stg_user;
 END;
 $$;

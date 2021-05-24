@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION gosipenkov.load_ods_issue (p_year INT) RETURNS VOID LANGUAGE plpgsql AS $$
 BEGIN
-    DELETE FROM gosipenkov.ods_issue WHERE DATE_PART('YEAR', end_date) = p_year;
+    DELETE FROM gosipenkov.ods_issue WHERE DATE_PART('YEAR', end_time) = p_year;
 
     INSERT INTO gosipenkov.ods_issue
     (
@@ -24,6 +24,6 @@ BEGIN
     FROM
         gosipenkov.stg_issue
     WHERE
-        DATE_PART('YEAR', end_date) = p_year;
+        DATE_PART('YEAR', CAST(end_time AS TIMESTAMP)) = p_year;
 END;
 $$;

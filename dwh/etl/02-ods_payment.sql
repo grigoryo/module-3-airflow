@@ -28,6 +28,6 @@ BEGIN
     FROM
         gosipenkov.stg_payment
     WHERE
-        DATE_PART('YEAR', pay_date) = p_year;
+        DATE_PART('YEAR', CAST(pay_date AS DATE)) = p_year;
 END;
 $$;

@@ -24,6 +24,6 @@ BEGIN
     FROM
         gosipenkov.stg_billing
     WHERE
-        DATE_PART('YEAR', created_at) = p_year;
+        DATE_PART('YEAR', CAST(created_at AS DATE)) = p_year;
 END;
 $$;

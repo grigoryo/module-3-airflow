@@ -24,6 +24,6 @@ BEGIN
     FROM
         gosipenkov.stg_traffic
     WHERE
-        DATE_PART('YEAR', TO_TIMESTAMP(unixtime)) = p_year;
+        DATE_PART('YEAR', TO_TIMESTAMP(timestamp / 1000)) = p_year;
 END;
 $$;
