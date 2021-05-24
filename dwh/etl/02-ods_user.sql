@@ -16,7 +16,7 @@ BEGIN
         district,
         CAST(registered_at AS DATE) AS reg_date,
         billing_mode,
-        is_vip
+        is_vip,
         -- calculated
         CURRENT_TIMESTAMP AS load_date
     FROM
