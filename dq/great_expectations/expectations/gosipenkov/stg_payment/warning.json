@@ -1,0 +1,111 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "gosipenkov.stg_payment.warning",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_column_count_to_equal",
+      "kwargs": {
+        "value": 8
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "user_id",
+          "pay_doc_type",
+          "pay_doc_num",
+          "account",
+          "phone",
+          "billing_period",
+          "pay_date",
+          "sum"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "billing_period",
+        "regex": "^[0-9]{4}-[0-9]{2}$"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "pay_date",
+        "regex": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+      },
+      "meta": {}
+    }
+  ],
+  "meta": {
+    "BasicSuiteBuilderProfiler": {
+      "batch_kwargs": {
+        "data_asset_name": "gosipenkov.stg_payment",
+        "datasource": "rtk_de",
+        "limit": 1000,
+        "schema": "gosipenkov",
+        "table": "stg_payment"
+      },
+      "created_at": 1621863377.94484,
+      "created_by": "BasicSuiteBuilderProfiler"
+    },
+    "citations": [
+      {
+        "batch_definition": null,
+        "batch_kwargs": {
+          "data_asset_name": "gosipenkov.stg_payment",
+          "datasource": "rtk_de",
+          "limit": 1000,
+          "schema": "gosipenkov",
+          "table": "stg_payment"
+        },
+        "batch_markers": {
+          "ge_load_time": "20210524T133557.899885Z"
+        },
+        "batch_parameters": null,
+        "batch_request": null,
+        "batch_spec": null,
+        "citation_date": "2021-05-24T13:36:23.333503Z",
+        "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
+      }
+    ],
+    "columns": {
+      "account": {
+        "description": ""
+      },
+      "billing_period": {
+        "description": ""
+      },
+      "pay_date": {
+        "description": ""
+      },
+      "pay_doc_num": {
+        "description": ""
+      },
+      "pay_doc_type": {
+        "description": ""
+      },
+      "phone": {
+        "description": ""
+      },
+      "sum": {
+        "description": ""
+      },
+      "user_id": {
+        "description": ""
+      }
+    },
+    "great_expectations_version": "0.13.19",
+    "notes": {
+      "content": [
+        "#### This is an _example_ suite\n\n- This suite was made by quickly glancing at 1000 rows of your data.\n- This is **not a production suite**. It is meant to show examples of expectations.\n- Because this suite was auto-generated using a very basic profiler that does not know your data like you do, many of the expectations may not be meaningful.\n"
+      ],
+      "format": "markdown"
+    }
+  }
+}
